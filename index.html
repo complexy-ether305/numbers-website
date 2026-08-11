@@ -9,14 +9,25 @@
   <style>
     body {
       background: #300000;
-    }
-    h2 {
       font-family: Audiowide, sans-serif;
       color: #ff0000;
+      text-align: center;
+      font-size: 20px;
+    }
+    h2 {
+      font-size: 60px;
     }
   </style>
   <body>
     <h2>Complexy Website</h2>
-    [WIP]
+    <div>Welcome! I do googology numbers stuff!</div>
+    <div>You have <span style="font-size: 30px" id="current">0</span> numbers while opening.</div>
+    <script>
+      var current = 0;
+      setInterval(_=>{
+        current++;
+        document.getElementById("current").innerHTML = current;
+      }, 100)
+    </script>
   </body>
 </html>
