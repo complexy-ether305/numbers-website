@@ -28,7 +28,8 @@
   </style>
   <body>
     <h2>SI-Prefix LNGI</h2>
-    <div class="current" id="current">Loading...</div>
+    <div id="time">Loading...</div>
+    <div class="current" id="current"></div>
     <script>
       function Level(x) {
         return `0 0 ${x/5}px`+(x<25?"":`, ${Level(x-25)}`);
@@ -41,9 +42,14 @@
           return (10**(x%3)).toFixed(4-(x%3|0))+`<span style="color:hsl(${(i-1)*36},${(i-1)*10}%,50%); text-shadow: ${Level(i-1)}">${" kMGTPEZYRQXWVUDCBAΩΨΞΣ?!@#$%^&*()-':;,.+=/_<>[]`~\|{}¿¡°¤"[i]}</span>`;
         }
       }
+      function formatTime(x) {
+        let x2 = x%86400;
+        return "Day "+(x/86400+1|0)+" | "+[x2/36000%10|0,x2/3600%10|0,":",x2/600%6|0,x2/60%10|0,":",x2/10%6|0,x2%10|0].join('')
+      }
       setInterval(_=>{
         let current = Date.now()/1000-1786555000;
-        document.getElementById("current").innerHTML = calculateSIPrefix(Math.log10(current/100+1)*(current/86400+1));
+        document.getElementById("current").innerHTML = calculateSIPrefix(Math.log10(current/100+1)*(current/(86400*3)+1));
+        document.getElementById("time").innerHTML = formatTime(current);
       }, 100)
     </script>
   </body>
