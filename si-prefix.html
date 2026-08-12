@@ -24,6 +24,7 @@
     .current {
       font-family: Numbers, monospace;
       font-size: 100px;
+      color: white;
     }
   </style>
   <body>
@@ -47,7 +48,7 @@
         return "Day "+(x/86400+1|0)+" | "+[x2/36000%10|0,x2/3600%10|0,":",x2/600%6|0,x2/60%10|0,":",x2/10%6|0,x2%10|0].join('')
       }
       setInterval(_=>{
-        let current = Date.now()/1000-1786555000;
+        let current = Date.now()/1000-1786556300;
         document.getElementById("current").innerHTML = calculateSIPrefix(Math.log10(current/100+1)*(current/(86400*3)+1));
         document.getElementById("time").innerHTML = formatTime(current);
       }, 100)
