@@ -30,7 +30,6 @@
     <h2>SI-Prefix LNGI</h2>
     <div class="current" id="current">Loading...</div>
     <script>
-      var current = 0;
       function Level(x) {
         return `0 0 ${x/5}px`+(x<25?"":`, ${Level(x-25)}`);
       }
@@ -43,7 +42,8 @@
         }
       }
       setInterval(_=>{
-        document.getElementById("current").innerHTML = calculateSIPrefix(0);
+        let current = Date.now()/1000-1786555000;
+        document.getElementById("current").innerHTML = calculateSIPrefix(Math.log10(current/100+1)*(current/86400+1));
       }, 100)
     </script>
   </body>
