@@ -26,12 +26,19 @@
       font-size: 100px;
       color: white;
     }
+    button {
+      background: #300000;
+      color: #ff0000;
+      font-family: Audiowide, sans-serif;
+    }
   </style>
   <body>
     <h2>SI-Prefix LNGI</h2>
     <div id="time">Loading...</div>
+    <button onclick="set=1-set">Enable Space</button><br>
     <div class="current" id="current"></div>
     <script>
+      let set1 = 0;
       function Level(x) {
         return `0 0 ${x/5}px`+(x<25?"":`, ${Level(x-25)}`);
       }
@@ -40,7 +47,7 @@
           return (10**x).toFixed(2);
         } else {
           let i = Math.floor(x/3);
-          return (10**(x%3)).toFixed(4-(x%3|0))+`<span style="color:hsl(${(i-1)*36},${(i-1)*10}%,50%); text-shadow: ${Level(i-1)}">${" kMGTPEZYRQXWVUDCBAΩΨΞΣ?!@#$%^&*()-':;,.+=/_<>[]`~\|{}¿¡°¤"[i]}</span>`;
+          return (10**(x%3)).toFixed(4-(x%3|0))+`<span style="color:hsl(${(i-1)*36},${(i-1)*10}%,50%); text-shadow: ${Level(i-1)}">${(set1==0?"":" ")+"kMGTPEZYRQXWVUDCBAΩΨΞΣ?!@#$%^&*()-':;,.+=/_<>[]`~\|{}¿¡°¤"[i]}</span>`;
         }
       }
       function formatTime(x) {
