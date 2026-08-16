@@ -48,12 +48,12 @@
           return (10**x).toFixed(2);
         } else {
           let i = Math.floor(x/3);
-          return (10**(x%3)).toFixed(2-(x%3|0))+`<span style="color:hsl(${(i-1)*36},${(i-1)*10}%,50%); text-shadow: ${Level(i-1)}">${(set1==0?"":" ")+" kMGTPEZYRQXWVUDCBAΩΨΞΣ?!@#$%^&*()-':;,.+=/_<>[]`~\|{}¿¡°¤"[i]}</span>`;
+          return (10**(x%3)).toFixed(3-(x%3|0))+`<span style="color:hsl(${(i-1)*36},${(i-1)*10}%,50%); text-shadow: ${Level(i-1)}">${(set1==0?"":" ")+" kMGTPEZYRQXWVUDCBAΩΨΞΣ?!@#$%^&*()-':;,.+=/_<>[]`~\|{}¿¡°¤"[i]}</span>`;
         }
       }
       function SIPrefixNames(x) {
         let names = ["N/A","kilo","mega","giga","tera","peta","exa","zetta","yotta","ronna","quetta"];
-        return names[x|0]+` (${(x%1)*100|0}%)`.replace(" (0%)","");
+        return names[x|0]+`<br>${(x%1)*100|0}%`.replace("0%","");
       }
       function formatTime(x) {
         let x2 = x%86400;
