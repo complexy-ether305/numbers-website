@@ -7,19 +7,19 @@
   </head>
   <title>SI-Prefix LNGI</title>
   <style>
+    @font-face {
+      font-family: Numbers;
+      src: url(FuturaPTBold.otf);
+    }
     body {
-      background: #300000;
-      font-family: Audiowide, sans-serif;
-      color: #ff0000;
+      background: #000000;
+      font-family: Numbers, sans-serif;
+      color: #ffffff;
       text-align: center;
       font-size: 20px;
     }
     h2 {
       font-size: 60px;
-    }
-    @font-face {
-      font-family: Numbers;
-      src: url(FuturaPTBold.otf);
     }
     .current {
       font-family: Numbers, monospace;
@@ -27,13 +27,12 @@
       color: white;
     }
     button {
-      background: #300000;
-      color: #ff0000;
-      font-family: Audiowide, sans-serif;
+      background: #000000;
+      color: #ffffff;
+      font-family: Numbers, sans-serif;
     }
   </style>
   <body>
-    <h2>SI-Prefix LNGI</h2>
     <div id="time">Loading...</div>
     <button onclick="set1=1-set1">Enable/Disable Space</button><br>
     <div class="current" id="current"></div>
